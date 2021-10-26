@@ -1,7 +1,6 @@
 //ESERCIZIO 1
 //1. Lista delle email con permesso di accesso
 const accounts = ["paolorossi@gmail.com" , "mariobiondi@gmail.com" , "dany@gmail.com"];
-console.log(accounts);
 //Ref
 const emailInput = document.getElementById("email");
 const accessBtn = document.querySelector(".btn-access");
@@ -10,8 +9,6 @@ const resoultEmail = document.querySelector(".resoult-input");
 accessBtn.addEventListener('click' , function() {
 
     const user = emailInput.value.trim().toLowerCase();
-    console.log("Email utente" , user);
-
     //Controllo campo vuoto
     if (user === "") {
         alert("Immettere la propria email prima di cliccare CONTROLLA.")
@@ -26,8 +23,6 @@ accessBtn.addEventListener('click' , function() {
                 break;
             }
         }
-        console.log(userFound);
-
         //4. Output del risultato dei controlling
         if (userFound) {
             resoultEmail.innerHTML = `Utente verificato può accedere al sito.`
@@ -37,9 +32,24 @@ accessBtn.addEventListener('click' , function() {
     }
 });
 
-
 //ESERCIZIO 2
+//Ref
+let playBtn = document.querySelector(".btn-play");
+let diceResoult = document.querySelector(".dice-resoult");
 //1. Generare due numeri random da 1 a 6 (uno per l'utente e uno per il computer)
+const playerNumber = Math.floor(Math.random() * 6) + 1;
+console.log("Numero del player" ,playerNumber);
+const computerNumber = Math.floor(Math.random() * 6) + 1;
+console.log("Numero del computer" ,computerNumber);
 
+playBtn.addEventListener('click' , function() {
+    if (playerNumber > computerNumber) {
+        diceResoult.innerHTML = `HAI VINTO!!! Hai fatto ${playerNumber} il computer invece ${computerNumber}`;
+    } else if (playerNumber < computerNumber) {
+        diceResoult.innerHTML = `Hai perso, il computer ti ha battuto con un ${computerNumber} , tu hai fatto ${playerNumber}`;
+    } else {
+        diceResoult.innerHTML = `PARI! Ritenta entrambi avete fatto ${playerNumber}`;
+    }
+});
 //2. Verificare il vincitore
 //3. Output del vincitore
