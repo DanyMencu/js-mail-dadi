@@ -37,12 +37,12 @@ accessBtn.addEventListener('click' , function() {
 let playBtn = document.querySelector(".btn-play");
 let diceResoult = document.querySelector(".dice-resoult");
 //1. Generare due numeri random da 1 a 6 (uno per l'utente e uno per il computer)
-const playerNumber = Math.floor(Math.random() * 6) + 1;
-console.log("Numero del player" ,playerNumber);
-const computerNumber = Math.floor(Math.random() * 6) + 1;
-console.log("Numero del computer" ,computerNumber);
-
 playBtn.addEventListener('click' , function() {
+    const playerNumber = Math.floor(Math.random() * 6) + 1;
+    console.log("Numero del player" ,playerNumber);
+    const computerNumber = Math.floor(Math.random() * 6) + 1;
+    console.log("Numero del computer" ,computerNumber);
+    //2. Verificare il vincitore
     if (playerNumber > computerNumber) {
         diceResoult.innerHTML = `HAI VINTO!!! Hai fatto ${playerNumber} il computer invece ${computerNumber}`;
     } else if (playerNumber < computerNumber) {
@@ -51,5 +51,3 @@ playBtn.addEventListener('click' , function() {
         diceResoult.innerHTML = `PARI! Ritenta entrambi avete fatto ${playerNumber}`;
     }
 });
-//2. Verificare il vincitore
-//3. Output del vincitore
