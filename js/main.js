@@ -1,6 +1,8 @@
 //ESERCIZIO 1
 //1. Lista delle email con permesso di accesso
-const accounts = ["paolorossi@gmail.com" , "mariobiondi@gmail.com" , "dany@gmail.com"];
+const accounts = ["paolorossi@gmail.com",
+"mariobiondi@gmail.com",
+"dany@gmail.com"];
 //Ref
 const emailInput = document.getElementById("email");
 const accessBtn = document.querySelector(".btn-access");
@@ -39,9 +41,7 @@ let diceResoult = document.querySelector(".dice-resoult");
 //1. Generare due numeri random da 1 a 6 (uno per l'utente e uno per il computer)
 playBtn.addEventListener('click' , function() {
     const playerNumber = Math.floor(Math.random() * 6) + 1;
-    console.log("Numero del player" ,playerNumber);
     const computerNumber = Math.floor(Math.random() * 6) + 1;
-    console.log("Numero del computer" ,computerNumber);
     //2. Verificare il vincitore
     if (playerNumber > computerNumber) {
         diceResoult.innerHTML = `HAI VINTO!!! Hai fatto ${playerNumber} il computer invece ${computerNumber}`;
